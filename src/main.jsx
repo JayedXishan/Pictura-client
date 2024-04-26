@@ -11,6 +11,8 @@ import Home from './Pages/Home';
 import AllCraft from './Pages/AllCraft';
 import AddCraft from './Pages/AddCraft';
 import MyCraft from './Pages/MyCraft';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
+      },
+      {
+        path:'/login',
+        element:<Login></Login>,
+      },
+      {
+        path:'/register',
+        element:<Register></Register>,
       },
       {
         path:'/allcraft',

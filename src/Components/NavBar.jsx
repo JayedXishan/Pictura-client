@@ -8,7 +8,8 @@ const NavBar = () => {
                 <header className="p-4">
                     <div className="container flex justify-between h-16 mx-auto">
                         <Link to='/' className="flex items-center p-2 text-4xl font-extrabold ">
-                            Pictura
+                            <span className='text-[#D1BB9E]'>Pictura</span>
+
                         </Link>
                         <ul className="items-stretch hidden space-x-3 lg:flex">
                             <li className="flex">
@@ -24,9 +25,9 @@ const NavBar = () => {
                                 <Link to='/addcraft' className="flex items-center px-4">Add Craft</Link>
                             </li>
                         </ul>
-                        <div className="items-center flex-shrink-0 hidden lg:flex">
-                            <button className="self-center px-8 py-3 rounded">Sign in</button>
-                            <button className="self-center px-8 py-3 font-semibold rounded ">Sign up</button>
+                        <div className="items-center space-x-2 flex-shrink-0 hidden lg:flex">
+                            <Link to='/login' className="self-center px-7 py-2 rounded border-2 border-[#102C57] text-[#102C57] font-semibold">Sign in</Link>
+                            <Link to='/register' className="self-center px-8 py-3 font-semibold rounded bg-[#D1BB9E] text-white">Sign up</Link>
                         </div>
                         <button className="p-4 lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-800">
