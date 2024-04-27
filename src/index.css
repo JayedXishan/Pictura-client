@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.bgImg1{
+    background-image: linear-gradient(90.00deg, rgba(21, 11, 43, 0.9),rgba(21, 11, 43, 0.2) 100%),url(https://i.ibb.co/7z4Ltsx/dan-farrell-f-T49-Qn-Fuc-Q8-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.bgImg2{
+    background-image: linear-gradient(90.00deg, rgba(21, 11, 43, 0.9),rgba(21, 11, 43, 0.2) 100%),url(https://i.ibb.co/LzPzC9y/21894134-2111-w030-n002-246-B-p1-246.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.bgImg3{
+    background-image: linear-gradient(90.00deg, rgba(21, 11, 43, 0.9),rgba(21, 11, 43, 0.2) 100%),url(https://i.ibb.co/tJ4hrVx/pexels-zaksheuskaya-709412-1616403.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.bgImg4{
+    background-image: linear-gradient(90.00deg, rgba(21, 11, 43, 0.9),rgba(21, 11, 43, 0.2) 100%),url(https://i.ibb.co/pKT1NDr/10893908-4613694.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
