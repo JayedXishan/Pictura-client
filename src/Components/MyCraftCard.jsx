@@ -3,8 +3,47 @@ import { FaRegStar } from "react-icons/fa";
 import { TbSettingsPlus } from "react-icons/tb";
 import { IoIosPricetags } from "react-icons/io";
 import { LuBadgeDollarSign } from "react-icons/lu";
+import Swal from 'sweetalert2'
+
 const MyCraftCard = ({ craft }) => {
-    const { name, subcategory, customization, image, price, rating, time, status, description } = craft;
+
+    const { _id, name, subcategory, customization, image, price, rating, time, status, description } = craft;
+
+    const handleDelete = _id => {
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+        .then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/craft/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+
+            }
+        });
+
+
+
+
+    }
     return (
         <div>
             <div>
@@ -29,17 +68,17 @@ const MyCraftCard = ({ craft }) => {
                             </div>
                             <div className='flex items-center space-x-1 text-blue-400'>
                                 <TbSettingsPlus />
-                               <p>{customization}</p> 
+                                <p>{customization}</p>
                             </div>
                             <div className='flex items-center space-x-1 text-orange-300'>
                                 <IoIosPricetags />
                                 <p>{status}</p>
-                                
+
                             </div>
                         </div>
                         <div className="card-actions justify-end ">
                             <button className="btn bg-[#D1BB9E] text-white">Update</button>
-                            <button className="btn bg-[#3C5B6F] text-white">Delect</button>
+                            <button onClick={() => handleDelete(_id)} className="btn bg-[#3C5B6F] text-white">Delect</button>
 
                         </div>
                     </div>
