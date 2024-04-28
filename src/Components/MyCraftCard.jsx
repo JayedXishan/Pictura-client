@@ -4,6 +4,7 @@ import { TbSettingsPlus } from "react-icons/tb";
 import { IoIosPricetags } from "react-icons/io";
 import { LuBadgeDollarSign } from "react-icons/lu";
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom';
 
 const MyCraftCard = ({ craft }) => {
 
@@ -77,7 +78,7 @@ const MyCraftCard = ({ craft }) => {
                             </div>
                         </div>
                         <div className="card-actions justify-end ">
-                            <button className="btn bg-[#D1BB9E] text-white">Update</button>
+                            <Link to={`/updateCraft/${_id}`} className="btn bg-[#D1BB9E] text-white">Update</Link>
                             <button onClick={() => handleDelete(_id)} className="btn bg-[#3C5B6F] text-white">Delect</button>
 
                         </div>
