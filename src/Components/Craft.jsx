@@ -10,7 +10,7 @@ const Craft = ({craft}) => {
         <div>
             <div>
                 <div className="card card-compact w-96 h-[435px] bg-base-100 shadow-xl">
-                    <figure><img src={image} alt="Shoes" /></figure>
+                    <figure><img className='h-[230px] w-full' src={image} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{name}</h2>
                         <p>{description}</p>
