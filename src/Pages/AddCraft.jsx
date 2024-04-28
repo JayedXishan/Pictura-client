@@ -1,7 +1,8 @@
 import React from 'react';
-
+import useAuth from '../Hooks/useAuth'
 const AddCraft = () => {
-    
+    const {user} =useAuth() || {};
+
     const handleAdd = e => {
         e.preventDefault();
 
@@ -13,11 +14,12 @@ const AddCraft = () => {
         const customization = form.customization.value;
         const price = form.price.value;
         const rating = form.rating.value;
-        const time = form.item_name.value;
+        const time = form.time.value;
         const status = form.status.value;
         const description = form.description.value;
+        const email = user.email;
 
-        const item = {name , subcategory , customization ,  image , price , rating , time , status , description };
+        const item = {name , subcategory , customization ,  image , price , rating , time , status , description,email };
 
 
         fetch('http://localhost:5000/craft', {

@@ -14,42 +14,54 @@ import MyCraft from './Pages/MyCraft';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import CraftDetails from './Pages/CraftDetails';
+import PrivateRoute from './Pages/PrivateRoute';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Parent></Parent>,
-    children:[
+    children: [
       {
-        path:'/',
-        element:<Home></Home>,
+        path: '/',
+        element: <Home></Home>,
         loader: () => fetch('http://localhost:5000/craft'),
       },
       {
-        path:'/craft/:id',
-        element:<CraftDetails></CraftDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`),
+        path: '/craft/:id',
+        element: <PrivateRoute>
+          <CraftDetails></CraftDetails>
+        </PrivateRoute>,
+
+        loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`),
       },
 
       {
-        path:'/login',
-        element:<Login></Login>,
+        path: '/login',
+        element: <Login></Login>,
       },
       {
-        path:'/register',
-        element:<Register></Register>,
+        path: '/register',
+        element: <Register></Register>,
       },
       {
-        path:'/allcraft',
-        element:<AllCraft></AllCraft>,
+        path: '/allcraft',
+        element: <AllCraft></AllCraft>,
+        loader: () => fetch('http://localhost:5000/craft'),
       },
       {
-        path:'/mycraft',
-        element:<MyCraft></MyCraft>,
+        path: '/mycraft',
+        element: <PrivateRoute>
+          <MyCraft></MyCraft>,
+        </PrivateRoute>
+
       },
       {
-        path:'/addcraft',
-        element:<AddCraft></AddCraft>,
+        path: '/addcraft',
+        element: <PrivateRoute>
+          <AddCraft></AddCraft>
+        </PrivateRoute>,
+
+
       },
 
     ]
