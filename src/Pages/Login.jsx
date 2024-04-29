@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form"
 import useAuth from '../Hooks/useAuth'
 import SocialLogin from '../Components/SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 const Login = () => {
@@ -31,19 +31,19 @@ const Login = () => {
 
         signInUser(email, password)
             .then(result => {
-                // notifySuccess();
+                notifySuccess();
                 console.log(result.user)
 
                 navigate(location?.state ? location.state : '/');
 
             })
             .catch(error => {
-                // notifyFailed();
+                notifyFailed();
                 console.log(error)
             })
     };
-    // const notifySuccess = () => toast("Successfully Logged in!");
-    // const notifyFailed = () => toast("Logged in Failed !");
+    const notifySuccess = () => toast("Successfully Logged in!");
+    const notifyFailed = () => toast("Logged in Failed !");
     return (
         <div className='lg:w[1170px] mx-auto'>
             <div className="hero min-h-screen bg-base-200">
@@ -80,7 +80,7 @@ const Login = () => {
                                 <button className="btn bg-[#D1BB9E] text-white">Login</button>
                             </div>
                         </form>
-                        {/* <ToastContainer></ToastContainer> */}
+                        <ToastContainer></ToastContainer>
 
                         <div className='flex justify-between items-center text-[14px] px-8 mb-[12px]'>
                             <p>Don't have account?</p>

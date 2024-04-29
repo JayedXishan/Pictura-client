@@ -7,14 +7,18 @@ import { signOut } from 'firebase/auth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { updateProfile } from 'firebase/auth';
 
+
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
+
+
 const FirebaseProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    
 
-    const [loading,setLoading] =useState(true);
+    const [loading,setLoading] =useState(false);
     //console.log(user);
     const createUser = (email, password) => {
         setLoading(true);

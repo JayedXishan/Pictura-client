@@ -45,16 +45,22 @@ const Register = () => {
             return
         }
 
-        notify();
+        
 
         createUser(data.email, data.password)
             .then(result => {
                 console.log(result);
+                notify();
                 updateUserProfile(data.name, data.photoUrl);
+            })
+            .catch(error => {
+                notifyFailed();
+                console.log(error)
             })
 
     };
-    const notify = () => toast("Successfully Created !");
+    const notify = () => toast("Registration Successful!");
+    const notifyFailed = () => toast("Registration Failed !");
 
     return (
         <div>
