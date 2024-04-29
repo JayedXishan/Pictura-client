@@ -10,7 +10,7 @@ const Category = () => {
                     crafts[0]?.subcategory ? <p>{crafts[0].subcategory}</p> : <p>No Craft</p>
                 }
             </div>
-            <div className='grid grid-cols-3 gap-2'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-2'>
                 {
                     crafts.map(craft => <CategoryCard craft={craft} key={craft._id}></CategoryCard>)
                 }

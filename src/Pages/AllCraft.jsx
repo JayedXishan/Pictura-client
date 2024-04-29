@@ -9,8 +9,8 @@ const AllCraft = () => {
             <div>
                 <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
                     <h2 className="mb-4 text-2xl text-center font-semibold leading-tight">All Arts and Crafts</h2>
-                    <div className="overflow-x-auto">
-                        <table className="min-w-full text-xs">
+                    <div className="flex justify-center overflow-x-auto">
+                        <table className="lg:w-[1000px] w-[350px] text-xs">
                             <colgroup>
                                 <col />
                                 <col />
@@ -52,7 +52,7 @@ const AllCraft = () => {
                                         </td>
                                         <td className="p-3 text-right">
                                             <span className="px-3 py-1 ">
-                                                <Link to={`/craft/${craft._id}`} className='btn bg-[#D1BB9E] text-white'>View details</Link>
+                                                <Link to={`/craft/${craft._id}`} className='btn bg-[#D1BB9E] text-white  w-[50px]'>View details</Link>
                                             </span>
                                         </td>
                                     </tr>)
