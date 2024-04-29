@@ -24,11 +24,11 @@ const NavBar = () => {
                             </div>
                         </div>
 
-                        <Link to='/' className="flex items-center p-2 text-4xl font-extrabold ">
-                            <span className='text-[#D1BB9E]'>Pictura</span>
+                        <Link to='/' className="flex items-center p-2  ">
+                            <span className='text-[#D1BB9E] font-vibe text-5xl '>Pictura</span>
 
                         </Link>
-                        <ul className="items-stretch hidden space-x-3 lg:flex">
+                        <ul className="items-stretch hidden space-x-3 lg:flex text-gray-700 font-extralight ">
                             <li className="flex">
                                 <Link to='/' className="flex items-center px-4 ">Home</Link>
                             </li>
@@ -71,12 +71,12 @@ const NavBar = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <button className='text-primary' onClick={logout}>Logout</button>
+                                    <button className='text--[#102C57]' onClick={logout}>Logout</button>
                                 </div>
                                     :
                                     <div className="items-center space-x-2 flex-shrink-0 hidden lg:flex">
-                                        <Link to='/login' className="self-center px-7 py-2 rounded border-2 border-[#102C57] text-[#102C57] font-semibold">Sign in</Link>
-                                        <Link to='/register' className="self-center px-8 py-3 font-semibold rounded bg-[#D1BB9E] text-white">Sign up</Link>
+                                        <Link to='/login' className="self-center px-7 py-2 rounded border-2 border-[#102C57] text-[#102C57]  font-vibe">Sign in</Link>
+                                        <Link to='/register' className="self-center px-8 py-3  rounded bg-[#D1BB9E] text-white font-vibe">Sign up</Link>
                                     </div>
                             }
                         </div>

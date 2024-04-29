@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 const CategoryContainer = () => {
     return (
         <div className='lg:w-[1170px] mx-auto my-[100px]'>
+            <div className='w-full mb-[60px]'>
+                <h3 className='text-center text-2xl font-bold mb-4' >All Categories</h3>
+                <p className='w-[70%] text-center mx-auto'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis consequatur, hic dolorum nulla dolor ipsum porro laboriosam maiores quas ea.</p>
+            </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-2'>
                 <div className="card w-96 h-[250px] bg-base-100 shadow-xl image-full">
                     <figure><img className='h-full  w-full' src="https://i.ibb.co/w0bGXps/landscape.jpg" alt="Shoes" /></figure>
