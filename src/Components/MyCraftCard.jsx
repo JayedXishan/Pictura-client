@@ -49,7 +49,7 @@ const MyCraftCard = ({ craft }) => {
         <div>
             <div>
                 <div className="card card-side flex-col md:flex-row bg-base-100 shadow-xl">
-                    <figure><img className='w-[300px] md:w-[400px] h-full' src={image} alt="Movie" /></figure>
+                    <figure><img className='w-[300px] md:w-[400px] h-[300px]' src={image} alt="Movie" /></figure>
                     <div className="card-body">
                         <div className='flex items-center justify-between'>
                             <div>
