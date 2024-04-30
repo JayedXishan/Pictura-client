@@ -16,9 +16,9 @@ const githubProvider = new GithubAuthProvider();
 
 const FirebaseProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-    
 
-    const [loading,setLoading] =useState(false);
+
+    const [loading, setLoading] = useState(true);
     //console.log(user);
     const createUser = (email, password) => {
         setLoading(true);
@@ -40,12 +40,12 @@ const FirebaseProvider = ({ children }) => {
     }
 
     const logout = () => {
-        setLoading(false);
+        setLoading(true);
         setUser(null)
         signOut(auth)
     }
 
-    const updateUserProfile = (name,image) => {
+    const updateUserProfile = (name, image) => {
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: image
@@ -53,12 +53,16 @@ const FirebaseProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user);
-                setLoading(false);
-            }
+        const unSubscribe = onAuthStateChanged(auth, user => {
+            setUser(user);
+            setLoading(false);
+            // if (user) {
+
+            // }
         });
+        return () => {
+            unSubscribe();
+        }
     }, [])
 
     const allValues = {

@@ -1,5 +1,6 @@
 import React from 'react';
 import useAuth from '../Hooks/useAuth'
+import Swal from 'sweetalert2'
 const AddCraft = () => {
     const { user } = useAuth() || {};
 
@@ -53,6 +54,11 @@ const AddCraft = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                Swal.fire({
+                    title: "Good job!",
+                    text: "Successfully Added a item!",
+                    icon: "success"
+                  });
             })
 
         fetch('https://pictura-server.vercel.app/category', {
