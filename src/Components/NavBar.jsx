@@ -7,7 +7,7 @@ const NavBar = () => {
     const [isHovered, setIsHovered] = useState(false);
     return (
         <div>
-            <div className='lg:w-[1170px] mx-auto'>
+            <div className='lg:w-[1170px] mx-auto dark:bg-slate-900'>
                 <header className="p-4">
                     <div className="container flex justify-between items-center h-16 mx-auto">
                         <div className="lg:hidden">
@@ -42,6 +42,7 @@ const NavBar = () => {
                                 <Link to='/addcraft' className="flex items-center px-4">Add Craft</Link>
                             </li>
                         </ul>
+                    
                         <div>
                             {
                                 user?.email ? <div className='flex space-x-2'>

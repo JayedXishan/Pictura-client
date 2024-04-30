@@ -9,8 +9,8 @@ const JoinUs = () => {
                         <img src="https://i.ibb.co/RgsCDPf/undraw-Making-art-re-ee8w.png" className="max-w-sm rounded-lg shadow-2xl" />
                         <div className='text-white'>
                             <h1 className="text-5xl font-bold">Join <span className='text-[#D1BB9E]'>Our Community!</span></h1>
-                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                            <button className="btn bg-[#D1BB9E]">Join Now</button>
+                            <p className="py-6">Where Creativity Flourishes and Connections Blossom" - Embark on a journey with fellow artists and crafters, sharing inspiration, tips, and support along the way.</p>
+                            <button className="btn bg-[#D1BB9E] text-white">Join Now</button>
                         </div>
                     </div>
                 </div>

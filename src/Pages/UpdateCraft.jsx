@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const UpdateCraft = () => {
     const craft = useLoaderData();
-    const {_id,name , subcategory , customization ,  image , price , rating , time , status , description}=craft;
+    const { _id, name, subcategory, customization, image, price, rating, time, status, description } = craft;
     const handleUpdate = e => {
         e.preventDefault();
 
@@ -19,7 +19,27 @@ const UpdateCraft = () => {
         const status = form.status.value;
         const description = form.description.value;
 
-        const item = { _id,name, subcategory, customization, image, price, rating, time, status, description };
+        let No = '1';
+        if (subcategory === 'Landscape Painting') {
+            No = '1';
+        }
+        else if (subcategory === 'Portrait Drawing') {
+            No = '2';
+        }
+        else if (subcategory === 'Watercolour Painting') {
+            No = '3';
+        }
+        else if (subcategory === 'Oil Painting') {
+            No = '4';
+        }
+        else if (subcategory === 'Charcoal Sketching') {
+            No = '5';
+        }
+        else if (subcategory === 'Cartoon Drawing') {
+            No = '6';
+        }
+
+        const item = { _id, No, name, subcategory, customization, image, price, rating, time, status, description };
 
 
         fetch(`http://localhost:5000/craft/${_id}`, {
@@ -32,13 +52,25 @@ const UpdateCraft = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.modifiedCount){
+                if (data.modifiedCount) {
                     Swal.fire({
                         title: "Updated!",
                         text: "You have successfulLy updated!",
                         icon: "success"
-                      });
+                    });
                 }
+            })
+
+        fetch(`http://localhost:5000/category/${_id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(item)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
             })
 
     }
@@ -69,7 +101,7 @@ const UpdateCraft = () => {
                         </div>
                         <div className="col-span-full sm:col-span-3">
                             <label className="text-sm">Customization</label>
-                            <select name='customization'defaultValue={customization} className="select select-bordered select-sm w-full  rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 ">
+                            <select name='customization' defaultValue={customization} className="select select-bordered select-sm w-full  rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 ">
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>

@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 
 const Parent = () => {
     return (
-        <div>
+        <div className='bg-base'>
             <NavBar></NavBar>
             <Outlet></Outlet>
             <Footer></Footer>
