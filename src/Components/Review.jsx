@@ -9,7 +9,7 @@ const Review = () => {
                     <p className='w-[70%] text-center mx-auto'>Share your experiences and insights, guiding us as we strive to elevate your journey through the world of art and craft.</p>
                 </div>
                 <div className='relative flex flex-col lg:flex-row lg:items-center lg:justify-around bg-[#102C57] p-8 text-white rounded-2xl'>
-                    <div className=' carousel w-[60%]'>
+                    <div className=' carousel w-[100%] lg:w-[60%]'>
                         <div id='review1' className="carousel-item w-full">
                             <div id='item1' className="carousel-item w-full container flex flex-col lg:w-[50%]  p-6 mx-auto divide-y rounded-m">
                                 <div className="flex justify-between p-4">

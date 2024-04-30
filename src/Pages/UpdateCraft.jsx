@@ -42,7 +42,7 @@ const UpdateCraft = () => {
         const item = { _id, No, name, subcategory, customization, image, price, rating, time, status, description };
 
 
-        fetch(`http://localhost:5000/craft/${_id}`, {
+        fetch(`https://pictura-server.vercel.app/craft/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -61,7 +61,7 @@ const UpdateCraft = () => {
                 }
             })
 
-        fetch(`http://localhost:5000/category/${_id}`, {
+        fetch(`https://pictura-server.vercel.app/category/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

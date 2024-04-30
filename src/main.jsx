@@ -29,24 +29,24 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/craft'),
+        loader: () => fetch('https://pictura-server.vercel.app/craft'),
       },
       {
         path: '/craft/:id',
         element: <PrivateRoute>
           <CraftDetails></CraftDetails>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`),
+        loader: ({ params }) => fetch(`https://pictura-server.vercel.app/craft/${params.id}`),
       },
       {
         path: 'category/:No',
         element:<Category></Category> ,
-        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.No}`),
+        loader: ({ params }) => fetch(`https://pictura-server.vercel.app/category/${params.No}`),
       },
       {
         path: 'categoryNo/:id',
         element:<CategoryCraftDetails></CategoryCraftDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/categoryNo/${params.id}`),
+        loader: ({ params }) => fetch(`https://pictura-server.vercel.app/categoryNo/${params.id}`),
       },
 
       {
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path: '/allcraft',
         element: <AllCraft></AllCraft>,
-        loader: () => fetch('http://localhost:5000/craft'),
+        loader: () => fetch('https://pictura-server.vercel.app/craft'),
       },
       {
         path: '/mycraft',
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
       {
         path: '/updateCraft/:id',
         element: <UpdateCraft></UpdateCraft>,
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`),
+        loader: ({params}) => fetch(`https://pictura-server.vercel.app/craft/${params.id}`),
       
       },
       

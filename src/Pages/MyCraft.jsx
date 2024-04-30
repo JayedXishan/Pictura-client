@@ -7,7 +7,7 @@ const MyCraft = () => {
     const { user } = useAuth() || {};
     const [item, setItem] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/mycraft/${user?.email}`)
+        fetch(`https://pictura-server.vercel.app/mycraft/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setItem(data);

@@ -43,7 +43,7 @@ const AddCraft = () => {
 
 
 
-        fetch('http://localhost:5000/craft', {
+        fetch('https://pictura-server.vercel.app/craft', {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             headers: {
                 "Content-Type": "application/json"
@@ -55,7 +55,7 @@ const AddCraft = () => {
                 console.log(data);
             })
 
-        fetch('http://localhost:5000/category', {
+        fetch('https://pictura-server.vercel.app/category', {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             headers: {
                 "Content-Type": "application/json"
@@ -71,7 +71,7 @@ const AddCraft = () => {
 
     return (
         <div className='lg:w-[1170px] mx-auto'>
-            <div className="p-6 bg-slate-200 ">
+            <div className="p-6 bg-[#FFF2E1] ">
                 <form onSubmit={handleAdd} className="container flex flex-col mx-auto space-y-12">
                     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                         <div className="col-span-full sm:col-span-3">
