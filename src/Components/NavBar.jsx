@@ -75,8 +75,8 @@ const NavBar = () => {
                                     <button className='text--[#102C57]' onClick={logout}>Logout</button>
                                 </div>
                                     :
-                                    <div className="items-center space-x-2 flex-shrink-0 hidden lg:flex">
-                                        <Link to='/login' className="self-center px-7 py-2 rounded border-2 border-[#102C57] text-[#102C57]  font-vibe">Sign in</Link>
+                                    <div className="items-center space-x-2 flex-shrink-0  lg:flex">
+                                        <Link to='/login' className="self-center px-7 py-2 rounded border-2 border-[#102C57] text-[#102C57] hidden lg:flex font-vibe">Sign in</Link>
                                         <Link to='/register' className="self-center px-8 py-3  rounded bg-[#D1BB9E] text-white font-vibe">Sign up</Link>
                                     </div>
                             }
