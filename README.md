@@ -7,6 +7,6 @@ feature :
 4. can update items in backend database
 5. authentication providate
 
-github link : https://github.com/programming-hero-web-course-4/B9A10-client-side-JayedXishan
+github link : https://github.com/JayedXishan/Pictura-client
 
 Live link : https://pictura-auth.web.app
